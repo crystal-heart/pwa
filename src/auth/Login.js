@@ -10,8 +10,8 @@ import {
   Link
 } from "react-router-dom";
 function Login(props) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('demo@vnext.com.vn');
+  const [password, setPassword] = useState('123456');
   const [statusLogin, setStatusLogin] = useState('');
   const [startLogin, setStartLogin] = useState(false);
   const dispatch = useDispatch();
