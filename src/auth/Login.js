@@ -46,8 +46,8 @@ function Login(props) {
         <div className="form-group">
           <h2 className="form-group__heading">{ja.unlock_your_diary}</h2>
           <form className="form-group__form js-form-login" action="#">
-            <input className="form__input" type="email" placeholder={ja.email} required onChange={e => { setEmail(e.target.value); setStatusLogin('') }} />
-            <input className="form__input" type="password" placeholder={ja.password} required onChange={e => { setPassword(e.target.value); setStatusLogin('') }} />
+            <input value="demo@vnext.com.vn" className="form__input" type="email" placeholder={ja.email} required onChange={e => { setEmail(e.target.value); setStatusLogin('') }} />
+            <input value="123456" className="form__input" type="password" placeholder={ja.password} required onChange={e => { setPassword(e.target.value); setStatusLogin('') }} />
             <p style={{ 'color': 'red' }}>{statusLogin}</p>
             {!startLogin ?
               <button style={{'marginRight':'6px'}}  onClick={login} type="button" className="button--success button js-login-button">{ja.login}</button> :
