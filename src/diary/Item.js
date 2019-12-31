@@ -19,7 +19,7 @@ const Item = (props) => {
             </div>
             <figcaption className="item__caption">
     <h3 className="caption__text caption__title">{data.title}</h3>
-    <p className="caption__text">{data.content}</p>
+    <div className="caption__text">{data.content}</div>
             </figcaption>
             <div className="item__overlay">{ja.read_story}</div>
             <Link className="link item__link" to={"/story/"+ data.id}></Link>

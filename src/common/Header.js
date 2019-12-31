@@ -29,7 +29,7 @@ const Header = (props) => {
                 <a href="#" className="nav__close-menu js-close-menu"></a>
               </li>
               <li className="list__item">
-                <Link to="/login" className="link nav__link">
+                <Link to="/login" className="button--success button">
                   {ja.login} </Link>
               </li>
               <li className="list__item">
@@ -48,18 +48,18 @@ const Header = (props) => {
                 <a href="#" className="nav__close-menu js-close-menu"></a>
               </li>
               <li className="list__item">
-                <Link to="/new-story" className="link nav__link">
+                <Link to="/new-story" className=" button--success button">
                  {ja.new_story}
                 </Link>
               </li>
               <li className="list__item">
-                <Link to="/stories" className="link nav__link">
+                <Link to="/stories" className="button--success button">
                     {ja.my_stories}
                </Link>
               </li>
      
               <li className="list__item">
-                <a href="#" className="link nav__link" onClick={logout}>
+                <a href="#" className="button--success button" onClick={logout}>
                 {ja.logout}
     </a>
               </li>

@@ -50,7 +50,7 @@ function Login(props) {
             <input className="form__input" type="password" placeholder={ja.password} required onChange={e => { setPassword(e.target.value); setStatusLogin('') }} />
             <p style={{ 'color': 'red' }}>{statusLogin}</p>
             {!startLogin ?
-              <button onClick={login} type="button" className="form__btn--submit js-login-button">{ja.login}</button> :
+              <button style={{'marginRight':'6px'}}  onClick={login} type="button" className="button--success button js-login-button">{ja.login}</button> :
 
               <button onClick={login} type="button" className="form__btn--submit button--loading"></button>
             }

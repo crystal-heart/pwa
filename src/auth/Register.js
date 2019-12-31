@@ -41,7 +41,7 @@ function Register(props){
           <input className="form__input" type="email" placeholder={ja.email} required  onChange={(e) =>setEmail(e.target.value) }/>
           <input className="form__input" type="password" placeholder={ja.password} required  onChange={(e) =>setPassword(e.target.value) } />
           <input className="form__input" type="password" placeholder={ja.confirm_password} required  onChange={(e) =>setConfirmPassword(e.target.value) }/>
-          <button onClick={register} type="button" className="form__btn--submit js-login-button">{ja.register}</button>
+          <button style={{'width':'100px','marginRight':'6px'}} onClick={register} type="button" className="button--success button js-login-button">{ja.register}</button>
           <Link className="form__btn--alternate" to="/login">{ja.login}?</Link>
         </form>
       </div>

@@ -68,8 +68,9 @@ function Detail(props) {
             <div className="modal js-modal" style={{display:modalOpen }}>
                 <div className="modal__body">
                      <p className="modal__text">{ja.confirm_delete}</p>
-                    <button onClick={deleteData} style={{marginRight: '10px',width: '120px'}} type="button" className="button button--success js-confirm-modal">{ja.delete}</button>
-                    <button onClick={closeModal} style={{width: '120px'}} type="button" className="button modal__cancel-btn js-cancel-modal">{ja.cancel}</button>
+
+                    <button onClick={deleteData} style={{marginRight: '10px',width: '120px'}} type="button" className="button modal__cancel-btn js-cancel-modal">{ja.delete}</button>
+                    <button  onClick={closeModal}  style={{width: '120px'}} type="button" className="button button--success js-confirm-modal">{ja.cancel} </button>
                 </div>
             </div>
             <Header />

@@ -65,6 +65,7 @@
   .nav__link {
     font-size: 19px;
     line-height: 44px;
+    
   }
   .nav__list {
     display: block;
@@ -150,6 +151,7 @@
     margin-top: 20px;
   }
   .form-group {
+    border-radius: 6px;
     width: 40%;
     min-width: 320px;
     max-width: 475px;
@@ -171,6 +173,9 @@
     text-align: center;
   }
   .form-group__heading {
+      
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
     color: #ffffff;
     font-size: 1.35em;
     display: block;
@@ -326,6 +331,7 @@
   .item__caption .caption__text {
     margin: 0;
     padding: 0;
+    height: 83px;
   }
   .item__caption .caption__title {
     font-weight: 800;
@@ -493,6 +499,7 @@
     font-size: 25px;
     line-height: 1.8em;
     padding: 0 50px;
+    word-break: break-all;
   }
   .story__toolbar {
     position: relative;
@@ -598,6 +605,7 @@
       font-size: 30px;
       font-weight: 600px;
       padding: 5px;
+  
     }
     .nav__close-menu {
       display: block;
