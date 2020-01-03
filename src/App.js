@@ -29,7 +29,10 @@ function App() {
   const user_id = localStorage.getItem('user_id');
 
   MainScript('main.js');
-  window.addEventListener('offline', () =>   localStorage.setItem('isOffline',true) );
+  window.addEventListener('offline', () =>  {
+    
+    localStorage.setItem('isOffline',true)
+  } );
   window.addEventListener('online', async () =>  {
 
     let list = await db.notes.filter(i => { return i.user_id == parseInt(user_id) }).toArray();

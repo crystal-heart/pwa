@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import ja from "../i18n/ja";
 // import { useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -6,12 +6,24 @@ import {
   Link
 } from "react-router-dom";
 const Header = (props) => {
+  const [offlineState , setOfflineState] = useState(false);
+  window.addEventListener('offline', () =>  {
+    alert('インターネットが繋がりませんから、オフラインのモードに変換します。');
+    setOfflineState(true);
+   
+  } );
+
   const token = localStorage.getItem('access_token');
   // const showMenu = useSelector(state => state.showmenu);
   const logout = () => {
-    localStorage.setItem('access_token', '');
-    localStorage.setItem('user_id', '');
-    props.history.push("/");
+    if(!offlineState) {
+      console.log(offlineState);
+      localStorage.setItem('access_token', '');
+      localStorage.setItem('user_id', '');
+      props.history.push("/");
+    } else {
+      alert('オフラインの時にログアウトできません。');
+    }
   }
   return (
     <header className="header">
@@ -61,7 +73,7 @@ const Header = (props) => {
               <li className="list__item">
                 <a href="#" className="button--success button" onClick={logout}>
                 {ja.logout}
-    </a>
+                 </a>
               </li>
             </ul>
           </nav>
