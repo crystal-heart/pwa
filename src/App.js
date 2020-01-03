@@ -40,11 +40,15 @@ function App() {
 
     BaseRequest.setHeader('Authorization', 'Bearer ' + localStorage.getItem('access_token'));
 
+  setTimeout(() => {
+
     let response = await BaseRequest.post('/synData',{data: JSON.stringify(list)});
 
     if (response.data.status === "ok") {
        db.notes.clear();
     }
+
+  },100);
 
 
   });
