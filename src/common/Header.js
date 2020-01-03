@@ -7,12 +7,21 @@ import {
 } from "react-router-dom";
 const Header = (props) => {
   const [offlineState , setOfflineState] = useState(false);
+  let status = 0;
   window.addEventListener('offline', () =>  {
-    alert('インターネットが繋がりませんから、オフラインのモードに変換します。');
+    if(!status) {
+      alert('インターネットが繋がりませんから、オフラインのモードに変換します。');
+      status = 1;
+    }
+   
     setOfflineState(true);
    
   } );
-
+  window.addEventListener('online', () =>  {
+     status = 0;
+    setOfflineState(false);
+   
+  } );
   const token = localStorage.getItem('access_token');
   // const showMenu = useSelector(state => state.showmenu);
   const logout = () => {
