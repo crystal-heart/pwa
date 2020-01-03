@@ -30,7 +30,12 @@ function Create(props) {
         props.history.push("/stories");
       }
       else if (response.problem== "NETWORK_ERROR") {
-       let x = await db.notes.add({'user_id': parseInt(user_id) , 'title': title, 'content': content });
+       let issetData =  await db.notes.filter(i => { return (i.user_id == parseInt(user_id) && i.title == title && i.content == content  ) }).toArray();
+        if(!issetData) {
+
+          let x = await db.notes.add({'user_id': parseInt(user_id) , 'title': title, 'content': content });
+          
+        }
         props.history.push("/stories");
       }
       else {
