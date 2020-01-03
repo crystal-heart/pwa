@@ -31,10 +31,12 @@ function Create(props) {
       }
       else if (response.problem== "NETWORK_ERROR") {
        let issetData =  await db.notes.filter(i => { return (i.user_id == parseInt(user_id) && i.title == title && i.content == content  ) }).toArray();
-        if(!issetData) {
+        console.log(issetData);
+        
+       if(issetData.length == 0) {
 
           let x = await db.notes.add({'user_id': parseInt(user_id) , 'title': title, 'content': content });
-          
+
         }
         props.history.push("/stories");
       }
