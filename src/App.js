@@ -30,6 +30,7 @@ function App() {
   const user_id = localStorage.getItem('user_id');
 
   MainScript('main.js');
+  
   window.addEventListener('offline', () =>  {
     
     localStorage.setItem('isOffline',true)
