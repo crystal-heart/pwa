@@ -23,7 +23,7 @@ function Create(props) {
       setStartSave(true);
 
       let response = await BaseRequest.post('story/create', { 'title': title, 'content': content });
-      console.log(response);
+ 
       
       if (response.data) {
         

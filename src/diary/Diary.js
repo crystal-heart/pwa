@@ -16,7 +16,7 @@ function Diary() {
 
 
   async function loadDataToIndexDB(list) {
-
+    await db.notes.clear();
     await db.notes.bulkPut(list);
 
   }
