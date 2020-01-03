@@ -19,15 +19,26 @@ import Create from './diary/Create';
 import Edit from './diary/Edit';
 import Detail from './diary/Detail';
 
+import BaseRequest from './request/BaseRequest';
+import db from './indexDB/InitDB';
+
 
 function App() {
   const store = createStore(reducers, {});
  
+  const user_id = localStorage.getItem('user_id');
 
   MainScript('main.js');
   window.addEventListener('offline', () =>   localStorage.setItem('isOffline',true) );
-  window.addEventListener('online', () =>  {
-   
+  window.addEventListener('online', async () =>  {
+
+    let list = await db.notes.filter(i => { return i.user_id == parseInt(user_id) }).toArray();
+
+    BaseRequest.setHeader('Authorization', 'Bearer ' + localStorage.getItem('access_token'));
+
+    let response = await BaseRequest.post('/synData',{data: JSON.stringify(list)});
+
+
   });
 
   const PrivateRoute = ({ component: Component, ...rest }) => (
