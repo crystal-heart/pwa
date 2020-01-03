@@ -1,16 +1,14 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 import ja from "../i18n/ja"; 
 import remind_icon from '../assets/img/remind-icon.svg';
 import lock_icon from '../assets/img/lock-icon.svg';
 import heart_solid from '../assets/img/heart-solid.svg';
-import Footer from '../common/Footer';
-import Header from '../common/Header';
+
 import  {Link} from "react-router-dom";
 
 function Home() {
   return (
-    <div className="page page--is-flex page--stretches">
-   <Header />
+<Fragment>
     <section className="hero hero--home">
         <div className="container">
             <h1 className="hero__title">{ja.sologan}</h1>
@@ -54,8 +52,7 @@ function Home() {
             </div>
         </div>
     </section>
-    <Footer/>
-</div>
+    </Fragment>
   );
 }
 

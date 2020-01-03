@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {Fragment, useState } from 'react';
 import ja from "../i18n/ja";
 
 import Footer from '../common/Footer';
@@ -52,8 +52,7 @@ function Create(props) {
   }
   const date = new Date();
   return (
-    <div className="page page--is-flex page--stretches">
-      <Header />
+   <Fragment>
       <div className="container">
         <div className="form-group">
           <h2 className="form-group__heading"><Moment format="YYYY/M/DD">{date}</Moment></h2>
@@ -65,8 +64,7 @@ function Create(props) {
           </form>
         </div>
       </div>
-      <Footer />
-    </div>
+    </Fragment>
   );
 }
 

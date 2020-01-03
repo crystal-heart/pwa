@@ -40,8 +40,7 @@ function Login(props) {
 
   }
   return (
-    <div className="page page--is-flex page--stretches">
-      <Header />
+   
       <div className="container">
         <div className="form-group">
           <h2 className="form-group__heading">{ja.unlock_your_diary}</h2>
@@ -59,9 +58,7 @@ function Login(props) {
           </form>
         </div>
       </div>
-      <Footer />
-
-    </div>
+    
   );
 }
 

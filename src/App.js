@@ -18,7 +18,8 @@ import MainScript from './hooks/MainScript';
 import Create from './diary/Create';
 import Edit from './diary/Edit';
 import Detail from './diary/Detail';
-
+import Footer from './common/Footer';
+import Header from './common/Header';
 import BaseRequest from './request/BaseRequest';
 import db from './indexDB/InitDB';
 
@@ -65,8 +66,11 @@ function App() {
   )
   return (
     <Provider store={store}>
+   
     <Router>
       <Switch>
+      <div className="page page--is-flex page--stretches">
+      <Header />
         <PublicRoute path="/" component={Home} exact />
         <PublicRoute path="/login" component={Login} />
         <PublicRoute path="/register" component={Register} />
@@ -74,9 +78,11 @@ function App() {
         <PrivateRoute path="/new-story" component={Create} />
         <PrivateRoute path="/story/:id/edit" component={Edit} />
         <PrivateRoute path="/story/:id" component={Detail} />
-      
+        <Footer />
+</div>
       </Switch>
     </Router>
+
     </Provider>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {Fragment, useState, useEffect } from 'react';
 import ja from "../i18n/ja";
 
 import Footer from '../common/Footer';
@@ -46,8 +46,7 @@ function Diary() {
   }, []);
   return (
 
-    <div className="page page--is-flex page--stretches">
-      <Header />
+    <Fragment>
 
       <div className="snowflakes" aria-hidden="true">
         <div className="snowflake">
@@ -114,9 +113,8 @@ function Diary() {
         }
 
       </div>
-
-      <Footer />
-    </div>
+      </Fragment>
+    
   );
 }
 

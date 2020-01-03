@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {Fragment, useState, useEffect } from 'react';
 import ja from "../i18n/ja";
 
 import Footer from '../common/Footer';
@@ -64,7 +64,7 @@ function Detail(props) {
           props.history.push("/stories");
     }
     return (
-        <div className="page page--is-flex page--stretches">
+        <Fragment>
             <div className="modal js-modal" style={{display:modalOpen }}>
                 <div className="modal__body">
                      <p className="modal__text">{ja.confirm_delete}</p>
@@ -73,7 +73,7 @@ function Detail(props) {
                     <button  onClick={closeModal}  style={{width: '120px'}} type="button" className="button button--success js-confirm-modal">{ja.cancel} </button>
                 </div>
             </div>
-            <Header />
+      
             <div className="story">
                 <p className="story__date"> <Moment format="YYYY/M/DD">
                 {item.created_at}
@@ -92,8 +92,7 @@ function Detail(props) {
                     </div>
                 </div>
             </div>
-            <Footer />
-        </div>
+            </Fragment>
     );
 }
 
