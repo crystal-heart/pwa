@@ -38,6 +38,10 @@ function App() {
 
     let response = await BaseRequest.post('/synData',{data: JSON.stringify(list)});
 
+    if (response.data.status === "ok") {
+       db.notes.clear();
+    }
+
 
   });
 
