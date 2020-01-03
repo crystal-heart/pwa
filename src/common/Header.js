@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import ja from "../i18n/ja";
 // import { useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -7,21 +7,30 @@ import {
 } from "react-router-dom";
 const Header = (props) => {
   const [offlineState , setOfflineState] = useState(false);
-  let status = 0;
-  window.addEventListener('offline', () =>  {
-    if(!status) {
-      alert('インターネットが繋がりませんから、オフラインのモードに変換します。');
-      status = 1;
-    }
-   
-    setOfflineState(true);
-   
-  } );
-  window.addEventListener('online', () =>  {
-     status = 0;
-    setOfflineState(false);
-   
-  } );
+  const [countEvnet  , setCountEvnet] = useState(0);
+  useEffect(() => {
+
+    window.addEventListener('offline', () =>  {
+     setTimeout( () => {
+      if(countEvnet === 0) {
+        alert('インターネットが繋がりませんから、オフラインのモードに変換します。');
+        setCountEvnet(1);
+      }
+     })
+     
+      setOfflineState(true);
+     
+    } );
+    window.addEventListener('online', () =>  {
+      setCountEvnet(0);
+      setOfflineState(false);
+     
+    } );
+
+    return () => {
+
+    };
+  }, []);
   const token = localStorage.getItem('access_token');
   // const showMenu = useSelector(state => state.showmenu);
   const logout = () => {
