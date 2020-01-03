@@ -32,8 +32,7 @@ function Register(props){
     }
   }
   return (
-    <div className="page page--is-flex page--stretches">
-    <Header />
+    
     <div className="container">
       <div className="form-group">
         <h2 className="form-group__heading">{ja.create_an_account}</h2>
@@ -46,11 +45,6 @@ function Register(props){
         </form>
       </div>
     </div>
-    
-    <Footer />
-    </div>
-
-
   );
 }
 
